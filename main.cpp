@@ -328,7 +328,7 @@ void fetchObjects(sqlite3* db) {
             double creation_time = sqlite3_column_double(stmt, 5);
 
             // Запись в файл
-            outFile << name << x << y << type << creation_time << std::endl;
+            outFile << name << " " << x << " " << y << " " << type << " " << creation_time << std::endl;
             std::cout << "ID: " << id
                 << ", Name: " << name
                 << ", x: " << x
@@ -367,7 +367,7 @@ bool tableExists(sqlite3* db, const std::string& tableName) {
 int main() {
     setlocale(LC_ALL, "Russian");
 
-    static const std::string filePath = "C:/Work/objects.txt";
+    static const std::string filePath = "objects1.txt";
     ObjectList objList;
     objList.readFromFile(filePath);
 
